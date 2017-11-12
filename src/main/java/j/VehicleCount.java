@@ -24,7 +24,7 @@ public class VehicleCount {
 
     public static void main(String[] args) {
         if (HbaseUtils.createTable(outputTableName, new String[]{columnFamilyName})) {
-            JavaSparkContext sc = SC.getLocalSC("VehicleCount");
+            JavaSparkContext sc = SC.getCloudSC("VehicleCount");
             Configuration inputHbaseConf = HbaseConf.getConf();
             inputHbaseConf.set(TableInputFormat.INPUT_TABLE, inputTableName);
 

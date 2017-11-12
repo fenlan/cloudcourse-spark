@@ -32,7 +32,8 @@ public class SC {
         SparkConf conf = new SparkConf()
                 .setMaster("spark://kafka-server1:7077")
                 .setAppName(appName)
-                .setJars(new String[]{"out\\artifacts\\sparkhbase_jar\\sparkhbase.jar"});
+                .set("spark.executor.memory", "2g")
+                .setJars(new String[]{"out/artifacts/sprkhbase/sprkhbase.jar"});
         return new JavaSparkContext(conf);
     }
 }
