@@ -50,8 +50,8 @@ public class Trace {
                             }
                     )
                     .mapToPair((Tuple2<String, Tuple3<String, String, String>> input) -> {
-                        String eid = input._2._1();
-                        String time = input._1;
+                        String eid = input._1;
+                        String time = input._2._1();
                         String longitude = input._2._2();
                         String latitude = input._2._3();
                         return new Tuple2<String, Tuple3<String, String, String>>(time, new Tuple3<>(eid, longitude, latitude));
